@@ -1,0 +1,41 @@
+        <condition property="tests.uptodate">
+          <and>
+            <!-- has any production code changed? -->
+
+            <uptodate>
+              <srcfiles dir="${main.src.dir}" includes="**/*.java"/>
+              <mapper type="glob" from="*.java"
+                                  to="${build.classes.dir}/*.class" />
+            </uptodate>
+
+            <!-- has any test code changed? -->
+            <uptodate>
+              <srcfiles dir="${test.src.dir}" includes="**/*.java"/>
+              <mapper type="glob" from="*.java"
+                                  to="${test.classes.dir}/*.class" />
+            </uptodate>
+
+            <!-- have any test data files changed? -->
+            <uptodate>
+              <srcfiles dir="${test.src.dir}" excludes="**/*.java"/>
+              <mapper type="glob" from="*" to="${test.classes.dir}/*" />
+            </uptodate>
+
+            <!-- did our last build fail tests? -->
+            <not>
+              <available file="${test.last.failed.file}"/>
+            </not>
+
+            <!-- if user specifies a test case to run, then run it -->
+            <not>
+              <isset property="testcase"/>
+            </not>
+
+            <!-- are the test results up to date with test cases? -->
+            <uptodate>
+              <srcfiles dir="${test.src.dir}" includes="**/*.java"/>
+              <mapper type="package"
+                      from="*Test.java" to="${test.data.dir}/TEST-*Test.xml"/>
+            </uptodate>
+          </and>
+        </condition>

@@ -1,0 +1,40 @@
+    <target name="run-tests" description="Run JUnit Tests" depends="build" unless="tests.uptodate" >
+        <!-- 'fork' to stop problems with XML parsers -->
+        <!-- [error|failure]property set if tests fail -->
+        <junit fork="true"
+            printsummary="false"
+            errorproperty="test.failed"
+            failureproperty="test.failed" >
+            <classpath refid="test.classpath"/>
+            <!-- brief formatter to console, XML formatter for reports -->
+            <formatter type="brief" usefile="false"/>
+            <formatter type="xml"/>
+
+            <!-- trick for running single test -->
+            <test name="${testcase}" todir="${test.data.dir}" if="testcase"/>
+
+            <!-- execute the tests in the test directory -->
+            <batchtest todir="${test.data.dir}" unless="testcase">
+                <fileset dir="${test.classes.dir}" includes="**/*Test.class"/>
+            </batchtest>
+        </junit>
+
+        <junitreport todir="${test.data.dir}">
+            <fileset dir="${test.data.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${test.reports.dir}"/>
+        </junitreport>
+
+        <!-- create temporary file indicating these tests failed -->
+        <!-- #Test case bypass trick -->
+        <echo message="last build failed tests"
+              file="${test.last.failed.file}"/>
+        <fail if="test.failed">
+          Unit tests failed.  Check log or reports for details
+        </fail>
+
+        <!-- Remove test failed file, as these tests succeeded -->
+        <delete file="${test.last.failed.file}"/>
+    </target>
+

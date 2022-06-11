@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/jacket.iml" filepath="$PROJECT_DIR$/.idea/jacket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HibernateRepository/jacket.HibernateRepository.iml" filepath="$PROJECT_DIR$/.idea/modules/HibernateRepository/jacket.HibernateRepository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HibernateRepository/jacket.HibernateRepository.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HibernateRepository/jacket.HibernateRepository.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HibernateRepository/jacket.HibernateRepository.test.iml" filepath="$PROJECT_DIR$/.idea/modules/HibernateRepository/jacket.HibernateRepository.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketRepository/jacket.JacketRepository.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketRepository/jacket.JacketRepository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketRepository/jacket.JacketRepository.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketRepository/jacket.JacketRepository.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketRepository/jacket.JacketRepository.test.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketRepository/jacket.JacketRepository.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketService/jacket.JacketService.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketService/jacket.JacketService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketService/jacket.JacketService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketService/jacket.JacketService.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketService/jacket.JacketService.test.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketService/jacket.JacketService.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketWeb/jacket.JacketWeb.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketWeb/jacket.JacketWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketWeb/jacket.JacketWeb.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketWeb/jacket.JacketWeb.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JacketWeb/jacket.JacketWeb.test.iml" filepath="$PROJECT_DIR$/.idea/modules/JacketWeb/jacket.JacketWeb.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository/jacket.Repository.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository/jacket.Repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository/jacket.Repository.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository/jacket.Repository.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository/jacket.Repository.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository/jacket.Repository.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jacket.main.iml" filepath="$PROJECT_DIR$/.idea/modules/jacket.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jacket.test.iml" filepath="$PROJECT_DIR$/.idea/modules/jacket.test.iml" />
+    </modules>
+  </component>
+</project>

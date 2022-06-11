@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+ <!ENTITY properties SYSTEM "./properties.xml">
+ <!ENTITY run_tests SYSTEM "./run_tests.xml">
+ <!ENTITY tests_uptodate SYSTEM "./tests_uptodate.xml">
+]>
+<project basedir="." default="help" name="HTTPProxy">
+
+    <property name="src.dir" value="src"/>
+    <property name="target.dir" value="target"/>
+
+    <!-- import global build properties -->
+    &properties;
+
+    <!-- set global properties for this build -->
+    <property file="build.properties"/>
+    <property environment="env"/>
+    <property name="main.dir" value="${src.dir}/main/java"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="lib.dir.common" value="${lib.dir}/common"/>
+    <property name="lib.dir.test" value="${lib.dir}/test"/>
+    <property name="classes.dir" value="${target.dir}/classes"/>
+    <property name="dist" value="dist"/>
+    <property name="doc" value="doc"/>
+    <property name="dist.lib.dir" value="${dist}/lib"/>
+    <property name="dist.bin.dir" value="${dist}/bin"/>
+    <property name="jar.dir" value="jar"/>
+    <property name="jarfile.name" value="HTTPProxy.jar"/>
+    <property name="jarfile" value="${dist.lib.dir}/${jarfile.name}"/>
+    <property name="deploy.dir" value="c:/home/kevinj/deploy"/>
+    <property name="deploy.lib.dir" value="${deploy.dir}/lib"/>
+    <property name="deploy.bin.dir" value="${deploy.dir}/bin"/>
+    <property name="local.deploy.dir" value="kevinj"/>
+    <property name="local.deploy.lib.dir" value="${local.deploy.dir}/lib"/>
+    <property name="local.deploy.bin.dir" value="${local.deploy.dir}/bin"/>
+    <property name="zip.dir" value="zip"/>
+    <property name="deploy.zip.name" value="HttpProxy.zip"/>
+
+    <property name="listen.port" value="9080"/>
+    <property name="tomcat.port" value="8080"/>
+    <property name="tomcat.home.dir" value="c:/tomcat"/>
+    <property name="tomcat.webapp.dir" value="${tomcat.home.dir}/webapps/ROOT"/>
+    <property name="server" value="localhost"/>
+
+    <path id="project.classpath">
+        <pathelement location="${classes.dir}"/>
+        <pathelement location="${test.classes.dir}"/>
+        <fileset dir="${lib.dir.common}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="test.classpath">
+        <pathelement location="${classes.dir}"/>
+        <pathelement location="${test.classes.dir}"/>
+        <pathelement location="${lib.dir.test}\junit-4.12.jar"/>
+        <pathelement location="${lib.dir.test}\hamcrest-2.2.jar"/>
+        <pathelement location="${lib.dir.test}\mockito-core-3.3.0.jar"/>
+        <pathelement location="${lib.dir.test}\byte-buddy-1.10.5.jar"/>
+        <pathelement location="${lib.dir.test}\byte-buddy-agent-1.10.5.jar"/>
+        <pathelement location="${lib.dir.test}\objenesis-2.6.jar"/>
+        <pathelement location="${lib.dir.common}\log4j-core-2.3.jar"/>
+        <fileset dir="${lib.dir.common}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="tomcat.classpath">
+        <pathelement path="${env.JAVA_HOME}/lib/tools.jar"/>
+    </path>
+
+    <target name="prepare">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${test.classes.dir}"/>
+        <mkdir dir="${test.data.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${doc}"/>
+        <mkdir dir="${dist.lib.dir}"/>
+        <available file="${lib.dir}/jar" property="jar.present"/>
+    </target>
+
+    <target name="build" description="Build Project" depends="prepare">
+        <javac classpathref="project.classpath" debug="true" destdir="${classes.dir}" srcdir="${main.dir}"/>
+        <javac classpathref="test.classpath" debug="true" destdir="${test.classes.dir}" srcdir="${test.src.dir}"/>
+        <copy todir="${classes.dir}" file="src/main/resources/log4j.properties" overwrite="true"/>
+    </target>
+
+    <target name="build-release" description="Build Project For Release">
+        <javac classpathref="project.classpath" debug="false" destdir="${classes.dir}" srcdir="${main.dir}"/>
+        <javac classpathref="project.classpath" debug="false" destdir="${test.classes.dir}" srcdir="${test.src.dir}"/>
+        <copy file="src/main/resources/log4j.release.properties" tofile="${classes.dir}/log4j.properties" overwrite="yes"/>
+    </target>
+
+    <target name="clean" description="Clean project">
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${test.classes.dir}"/>
+        <delete dir="${classes.dir}"/>
+        <delete dir="${doc}"/>
+        <delete dir="${dist.lib.dir}"/>
+        <delete dir="${dist.bin.dir}"/>
+        <delete dir="${test.data.dir}"/>
+        <delete dir="${test.reports.dir}"/>
+    </target>
+
+    <target name="run" depends="build" description="Run HttpProxy">
+        <java classname="com.mantiso.kevinj.http.ui.HttpProxyUI" classpathref="project.classpath" failonerror="true" fork="true">
+            <!-- Pass some args, perhaps: -->
+            <!-- for example...-->
+            <!--     listen send server -->
+            <arg line="${listen.port} ${tomcat.port} ${server}"/>
+        </java>
+    </target>
+
+    <target name="run-with-no-args" depends="build" description="Run HTTP Proxy with no Command Line Arguments">
+        <java classname="com.mantiso.kevinj.http.ui.HttpProxyUI" classpathref="project.classpath" failonerror="true" fork="true">
+        </java>
+    </target>
+
+    <target name="javadoc" depends="prepare" description="Create JavaDoc">
+        <javadoc classpathref="project.classpath"
+            destdir="${doc}"
+            package="true"
+            packagenames="com.mantiso.kevinj.http.*"
+            sourcepath="${main.dir}"
+            additionalparam="-breakiterator"/>
+    </target>
+
+    <target name="all" depends="clean, build, javadoc" description="Clean the Build and JavaDoc"/>
+
+    <target name="starttomcat" depends="setuptomcatconfig" description="Starts Tomcat">
+        <echo message="Starting Tomcat.... "/>
+        <java classname="org.apache.catalina.startup.Bootstrap" fork="yes">
+            <classpath>
+                <path refid="tomcat.classpath"/>
+                <pathelement path="${tomcat.home}/bin/bootstrap.jar"/>
+            </classpath>
+            <jvmarg value="-Dcatalina.home=${tomcat.home}"/>
+            <jvmarg value="-Dcatalina.base=${basedir}/${app.tomcat.server.dir}"/>
+            <jvmarg value="-Djava.endorsed.dirs=${tomcat.home}/common/endorsed;${tomcat.home}/bin"/>
+            <arg value="-config"/>
+            <arg value="${basedir}/${app.tomcat.server.dir}/conf/server.xml"/>
+            <arg value="start"/>
+        </java>
+    </target>
+
+    <target name="stoptomcat" description="Stops Tomcat">
+        <echo message="Stopping Tomcat.... "/>
+        <java classname="org.apache.catalina.startup.Bootstrap" fork="yes">
+            <classpath>
+                <path refid="tomcat.classpath"/>
+                <pathelement path="${tomcat.home}/bin/bootstrap.jar"/>
+            </classpath>
+            <jvmarg value="-Dcatalina.home=${tomcat.home}"/>
+            <jvmarg value="-Dcatalina.base=${basedir}/${app.tomcat.server.dir}"/>
+            <arg value="stop"/>
+        </java>
+    </target>
+
+    <target name="setuptomcatconfig" depends="prepare">
+
+        <!-- This filter is needed to set the ports that tomcat will listen on -->
+        <filter token="tomcat.port" value="${tomcat.port}"/>
+        <!-- This filter is needed to set the absolute path to the webapps
+             directory in the Tomcat server.xml configuration file -->
+        <filter token="webapp.name" value="${basedir}/${app.tomcat.server.dir}/webapps"/>
+        <!-- Some AddressBook labs use a servlet filter, this ant filter is needed to set
+             value of that servlet filter -->
+        <!--filter filtersfile="build/filters.properties"/>
+        <filter filtersfile="build/server.properties"/-->
+
+        <!-- Create work and conf directories and copy configuration files -->
+        <mkdir dir="${app.tomcat.server.dir}/conf"/>
+        <mkdir dir="${app.tomcat.server.dir}/work"/>
+        <mkdir dir="${app.tomcat.server.dir}/logs"/>
+        <mkdir dir="${app.tomcat.server.dir}/webapps"/>
+
+        <!-- Copy the Tomcat configuration files to our conf directory -->
+        <copy file="${global.server.dir}/conf/server.xml" filtering="on" todir="${app.tomcat.server.dir}/conf"/>
+        <copy file="${global.server.dir}/conf/tomcat-users.xml" todir="${app.tomcat.server.dir}/conf"/>
+        <copy file="${global.server.dir}/conf/web.xml" todir="${app.tomcat.server.dir}/conf"/>
+        <!-- copy the webapp xml files with filtering -->
+        <copy todir="${app.tomcat.server.dir}/webapps" filtering="on">
+            <fileset dir="${global.server.dir}/webapp/" includes="**/*.xml"/>
+        </copy>
+        <!-- copy the webapp binaries -->
+        <copy todir="${app.tomcat.server.dir}/webapps">
+            <!-- copy all the compliled classes -->
+            <fileset dir="${global.server.dir}/webapp/" excludes="**/*.xml"/>
+        </copy>
+    </target>
+
+    <target name="cleantomcat">
+        <!-- Delete the local tomcat directory tree -->
+        <delete dir="${app.tomcat.server.dir}"/>
+    </target>
+
+    &run_tests;
+
+    <target name="make-jar" depends="build-release" description="Create a JAR ready for deployment">
+        <jar destfile="${jarfile}" basedir="${classes.dir}"/>
+    </target>
+
+    <target name="make_distrbutable_zip" depends="make-jar" description="Create a zip file that contains all resources and can be copied to client machine">
+        <mkdir dir="${local.deploy.dir}"/>
+        <mkdir dir="${local.deploy.lib.dir}"/>
+        <mkdir dir="${local.deploy.bin.dir}"/>
+
+        <copy todir="${local.deploy.lib.dir}">
+            <fileset dir="${dist.lib.dir}" includes="${jarfile.name}"/>
+            <fileset dir="${lib.dir}"/>
+        </copy>
+        <copy todir="${local.deploy.bin.dir}">
+            <fileset dir="${dist.bin.dir}"/>
+        </copy>
+        <zip basedir="${local.deploy.dir}" destfile="${zip.dir}/${deploy.zip.name}" />
+    </target>
+
+    <target name="help" description="Print project help">
+        <java fork="no" classname="org.apache.tools.ant.Main">
+            <arg line="-projecthelp"/>
+        </java>
+    </target>
+
+</project>

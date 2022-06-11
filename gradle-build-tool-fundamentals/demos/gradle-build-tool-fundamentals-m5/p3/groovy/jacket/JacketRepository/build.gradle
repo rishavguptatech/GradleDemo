@@ -1,0 +1,34 @@
+
+dependencies {
+
+    implementation 'mysql:mysql-connector-java:5.1.35'
+    implementation 'javax.inject:javax.inject:1'
+	implementation 'javax.persistence:persistence-api:1.0.2'
+
+    testImplementation 'org.mockito:mockito-all:2.0.2-beta'
+
+}
+
+
+task migrateProduction {
+	group = "deploy"
+	description = "Run migration scripts for production"
+	doFirst {
+		 flyway {
+		    url = 'jdbc:mysql://localhost:3306'
+		    user = 'root'
+		    password = 'password'
+		    schemas = ['jacket']
+		    locations = ["filesystem:${projectDir}/migrations/common", "filesystem:${projectDir}/migrations/mysql"]
+		    sqlMigrationPrefix = ""
+		    baselineOnMigrate = true
+		    outOfOrder = true
+		}
+	}
+}
+
+
+
+migrateProduction.finalizedBy flywayMigrate  
+migrateTest.finalizedBy flywayMigrate  
+

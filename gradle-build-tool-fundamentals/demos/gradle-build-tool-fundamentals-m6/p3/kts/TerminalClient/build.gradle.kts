@@ -1,0 +1,4 @@
+apply (plugin= "application")
+
+version = "1.0-SNAPSHOT"
+

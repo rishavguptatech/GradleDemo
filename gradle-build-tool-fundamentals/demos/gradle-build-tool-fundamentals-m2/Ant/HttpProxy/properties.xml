@@ -1,0 +1,9 @@
+<property name="masterbuild.dir" value="${basedir}"/>
+
+<property name="test.dir" location="${src.dir}/test"/>
+<property name="test.src.dir" location="${test.dir}/java"/>
+<property name="test.classes.dir" location="${target.dir}/test"/>
+<property name="test.data.dir" location="test/data"/>
+<property name="test.reports.dir" location="${target.dir}/reports"/>
+<property name="test.last.failed.file" location="${test.classes.dir}/.lasttestsfailed"/>
+

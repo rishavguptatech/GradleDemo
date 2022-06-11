@@ -1,0 +1,2 @@
+rootProject.name = 'jCurlLib'
+include 'jCurlLib', 'TerminalClient'

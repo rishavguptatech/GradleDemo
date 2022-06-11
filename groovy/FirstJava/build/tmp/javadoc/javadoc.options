@@ -1,0 +1,7 @@
+-classpath 'C:\\Users\\subar\\Documents\\GradleDemo\\groovy\\FirstJava\\build\\classes\\java\\main;C:\\Users\\subar\\Documents\\GradleDemo\\groovy\\FirstJava\\build\\resources\\main;C:\\Users\\subar\\.gradle\\caches\\modules-2\\files-2.1\\javax.xml.bind\\jaxb-api\\2.3.1\\8531ad5ac454cc2deb9d4d32c40c4d7451939b5d\\jaxb-api-2.3.1.jar;C:\\Users\\subar\\.gradle\\caches\\modules-2\\files-2.1\\log4j\\log4j\\1.2.17\\5af35056b4d257e4b64b9e8069c0746e8b08629f\\log4j-1.2.17.jar;C:\\Users\\subar\\.gradle\\caches\\modules-2\\files-2.1\\javax.activation\\javax.activation-api\\1.2.0\\85262acf3ca9816f9537ca47d5adeabaead7cb16\\javax.activation-api-1.2.0.jar'
+-d 'C:\\Users\\subar\\Documents\\GradleDemo\\groovy\\FirstJava\\build\\docs\\javadoc'
+-doctitle 'FirstJava 1.0-SNAPSHOT API'
+-notimestamp 
+-quiet 
+-windowtitle 'FirstJava 1.0-SNAPSHOT API'
+'C:\\Users\\subar\\Documents\\GradleDemo\\groovy\\FirstJava\\src\\main\\java\\com\\example\\gradledemo\\HelloWorld.java'

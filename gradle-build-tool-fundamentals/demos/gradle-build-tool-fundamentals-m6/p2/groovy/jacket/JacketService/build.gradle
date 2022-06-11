@@ -1,0 +1,7 @@
+
+dependencies {
+    implementation "javax.inject:javax.inject:${javaxinject_version}"
+}
+
+
+

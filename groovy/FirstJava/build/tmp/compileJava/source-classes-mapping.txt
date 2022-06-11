@@ -1,0 +1,2 @@
+com/example/gradledemo/HelloWorld.java
+ com.example.gradledemo.HelloWorld

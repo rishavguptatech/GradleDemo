@@ -1,0 +1,60 @@
+buildscript {
+    ext {
+        log4j_version = '1.2.17'
+    }
+}
+
+plugins {
+//    id 'java'
+//    id "org.flywaydb.flyway" version "7.3.2"
+    id 'application'
+}
+
+java{
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    withJavadocJar()
+    withSourcesJar()
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation group:'javax.xml.bind' , name:'jaxb-api' , version: '2.3.1'
+    implementation "log4j:log4j:$log4j_version"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+mainClassName= 'com.example.gradledemo.HelloWorld'
+
+task 'hello'{
+    doFirst {
+        println("Hel")
+    }
+
+    doLast {
+        println("llo,")
+    }
+}
+
+task 'world'{
+
+    dependsOn 'hello'
+    doFirst {
+        println("Wor")
+    }
+
+    doLast {
+        println("ld")
+    }
+}

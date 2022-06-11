@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Repository:test" external.linked.project.path="$MODULE_DIR$/../../../Repository" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="jacket" external.system.module.type="sourceSet" external.system.module.version="0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output-test url="file://$MODULE_DIR$/../../../Repository/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../Repository/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../Repository/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../Repository/src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="jacket.Repository.main" />
+    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-library:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:1.9.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.objenesis:objenesis:1.0" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="jacket.Repository.main" />
+</module>

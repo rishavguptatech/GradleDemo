@@ -1,0 +1,94 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.h2database:h2:1.4.187'
+    }
+}
+
+
+plugins {
+  id "org.flywaydb.flyway" version "6.3.1" apply false
+}
+
+allprojects {
+
+  apply plugin: 'java'
+
+  version = '0.1-SNAPSHOT'
+  
+  sourceCompatibility = JavaVersion.VERSION_11
+  targetCompatibility = JavaVersion.VERSION_11
+
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    testImplementation 'org.hamcrest:hamcrest-core:1.3'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.hamcrest:hamcrest-library:1.3'
+    testImplementation 'org.mockito:mockito-core:1.9.+'
+
+    implementation 'commons-logging:commons-logging:1.2'
+
+  }
+}
+
+project(':Repository') {
+    dependencies {
+    }
+}
+
+project(':HibernateRepository') {
+    dependencies {
+      implementation project(':Repository')
+    }
+}
+
+project(':JacketRepository') {
+    dependencies {
+      implementation project(':HibernateRepository'), project(':Repository')
+    }
+}
+
+project(':JacketService') {
+    dependencies {
+      implementation project(':JacketRepository'), project(':Repository')
+    }
+}
+
+project(':JacketWeb') {
+    dependencies {
+      implementation project(':JacketService')
+    }
+}
+
+["JacketRepository", "JacketService", "JacketWeb"].each { name ->
+  project(":$name") { 
+    
+		apply plugin: 'org.flywaydb.flyway'
+
+    task migrateTest {	
+      group = "test"
+      description = "Run migration scripts for test"
+      doFirst {
+        flyway {
+          url = 'jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false'
+          user = 'sa'
+          password = ''
+          schemas = ['jacket']
+          locations = ["filesystem:${rootProject.projectDir}/migrations/common", "filesystem:${rootProject.projectDir}/migrations/h2"]
+          sqlMigrationPrefix = ""
+          baselineOnMigrate = true
+          outOfOrder = true
+        }
+      }
+    }
+	
+    migrateTest.finalizedBy flywayMigrate  
+ 
+   }
+}
+

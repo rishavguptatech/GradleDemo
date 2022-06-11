@@ -1,0 +1,50 @@
+plugins {
+  id 'application'
+  id 'com.adarshr.test-logger' version '2.0.0'
+}
+
+sourceCompatibility = 1.9
+targetCompatibility = 1.9
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+  implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+  testImplementation 'junit:junit:4.12'
+}
+
+testlogger {
+    theme 'standard'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 2000
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showStandardStreams false
+    showPassedStandardStreams true
+    showSkippedStandardStreams true
+    showFailedStandardStreams true
+}
+
+task singleTest (type: Test){
+  group = "Verification"
+  description = "Runs a single test"
+
+  dependsOn testClasses
+
+  filter {
+    includeTestsMatching 'com.pluralsight.security.TestCreateStreams.testWhenInputFileDoesExist'
+  }
+
+}
+
+mainClassName = "com.pluralsight.security.Hash"
+

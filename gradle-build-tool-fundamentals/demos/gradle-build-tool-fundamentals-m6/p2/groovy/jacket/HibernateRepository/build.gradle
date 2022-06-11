@@ -1,0 +1,12 @@
+
+dependencies {
+  def hibernateVersion = '4.3.10.Final'
+	
+  implementation "org.hibernate:hibernate-core:$hibernateVersion"
+  implementation "org.hibernate:hibernate-entitymanager:$hibernateVersion"
+    
+  implementation 'javax.inject:javax.inject:1'    
+
+  testImplementation "org.hamcrest:hamcrest-core:${hamcrest_version}"
+
+}

@@ -1,0 +1,16 @@
+> Task :compileJava
+Task ':compileJava' is not up-to-date because:
+> Task :processResources NO-SOURCE
+Skipping task ':processResources' as it has no source files and no previous output files.
+> Task :classes
+Skipping task ':classes' as it has no actions.
+> Task :jar
+Task ':jar' is not up-to-date because:
+> Task :assemble
+Skipping task ':assemble' as it has no actions.
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :build

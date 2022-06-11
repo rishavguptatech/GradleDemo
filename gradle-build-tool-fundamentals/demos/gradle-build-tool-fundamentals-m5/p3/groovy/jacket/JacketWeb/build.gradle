@@ -1,0 +1,42 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.22.RELEASE'
+    }
+}
+
+plugins {
+  id "io.spring.dependency-management" version "1.0.9.RELEASE"
+  id 'org.springframework.boot' version '2.2.5.RELEASE'
+  id 'war'
+}
+ 
+// Because Spring
+// https://stackoverflow.com/questions/54501697/gradle-war-plugin-how-to-change-name-of-an-archive
+bootWar {
+    archiveBaseName = 'JacketWeb'
+    archiveVersion = '0.0.2-SNAPSHOT'    
+}
+
+
+dependencies {
+
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation "jstl:jstl:1.2"
+    implementation 'javax.inject:javax.inject:1'
+    implementation 'javax.enterprise:cdi-api:1.2'
+    implementation 'c3p0:c3p0:0.9.1.2'    
+    implementation 'log4j:log4j:1.2.17'
+    
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+    implementation "org.springframework:spring-orm:4.1.7.RELEASE"
+  	implementation 'javax.persistence:persistence-api:1.0.2'
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+
+tasks.withType(JavaCompile) {
+    options.deprecation = true
+}
+

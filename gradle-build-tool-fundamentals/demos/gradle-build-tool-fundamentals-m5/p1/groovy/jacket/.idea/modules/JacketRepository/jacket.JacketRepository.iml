@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":JacketRepository" external.linked.project.path="$MODULE_DIR$/../../../JacketRepository" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="jacket" external.system.module.version="0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../JacketRepository">
+      <excludeFolder url="file://$MODULE_DIR$/../../../JacketRepository/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../JacketRepository/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../JacketRepository/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

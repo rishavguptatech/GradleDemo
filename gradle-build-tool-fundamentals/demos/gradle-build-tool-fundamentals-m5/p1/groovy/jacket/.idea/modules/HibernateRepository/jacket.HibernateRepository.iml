@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":HibernateRepository" external.linked.project.path="$MODULE_DIR$/../../../HibernateRepository" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="jacket" external.system.module.version="0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../HibernateRepository">
+      <excludeFolder url="file://$MODULE_DIR$/../../../HibernateRepository/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../HibernateRepository/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../HibernateRepository/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

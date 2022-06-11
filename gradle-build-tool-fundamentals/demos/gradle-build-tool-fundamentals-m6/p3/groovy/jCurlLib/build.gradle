@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    api 'org.apache.httpcomponents:httpcore:4.4.13'
+}
+

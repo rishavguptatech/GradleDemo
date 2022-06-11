@@ -1,0 +1,20 @@
+<jnlp codebase="http://localhost"
+    href="http://localhost/HttpProxy.jnlp">
+    <information>
+        <title>HTTP Proxy</title>
+        <vendor>DevelopMentor</vendor>
+        <icon href="Tomcat.gif"/>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.4+"/>
+        <jar href="HTTPProxy.jar"/>
+        <jar href="dm.jar"/>
+    </resources>
+    <application-desc main-class="com.mantiso.kevinj.http.ui.HttpProxyUI">
+        <!--argument>first arg</argument>
+        <argument>second arg</argument-->
+    </application-desc>
+</jnlp>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="jacket.HibernateRepository.main" target="11" />
+      <module name="jacket.HibernateRepository.test" target="11" />
+      <module name="jacket.JacketRepository.main" target="11" />
+      <module name="jacket.JacketRepository.test" target="11" />
+      <module name="jacket.JacketService.main" target="11" />
+      <module name="jacket.JacketService.test" target="11" />
+      <module name="jacket.JacketWeb.main" target="11" />
+      <module name="jacket.JacketWeb.test" target="11" />
+      <module name="jacket.main" target="11" />
+      <module name="jacket.Repository.main" target="11" />
+      <module name="jacket.Repository.test" target="11" />
+      <module name="jacket.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

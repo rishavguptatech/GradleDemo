@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="kevins-mac-mini.lan" name="com.mantiso.kevinj.http.ui.InitDialogTest" skipped="0" tests="2" time="0.947" timestamp="2020-02-26T14:47:17">
+  <properties>
+    <property name="ant.library.dir" value="/usr/local/Cellar/ant/1.10.7_1/libexec/lib" />
+    <property name="env.TERM" value="xterm-256color" />
+    <property name="java.specification.version" value="13" />
+    <property name="ant.project.name" value="HTTPProxy" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="jar.dir" value="jar" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.vendor.url" value="https://openjdk.java.net/" />
+    <property name="DSTAMP" value="20200226" />
+    <property name="env.COLORFGBG" value="7;0" />
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/13.0.2+8_2/libexec/openjdk.jdk/Contents/Home/lib" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.mantiso.kevinj.http.ui.InitDialogTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/test/data/TEST-com.mantiso.kevinj.http.ui.InitDialogTest.xml crashfile=/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/junitvmwatcher17868825139142821444.properties propsfile=/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/junit827990965965957880.properties" />
+    <property name="test.classes.dir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/target/test" />
+    <property name="jdk.debug" value="release" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="tomcat.home.dir" value="c:/tomcat" />
+    <property name="env.JAVA_HOME" value="/usr/local/opt/openjdk" />
+    <property name="java.version.date" value="2020-01-14" />
+    <property name="java.home" value="/usr/local/Cellar/openjdk/13.0.2+8_2/libexec/openjdk.jdk/Contents/Home" />
+    <property name="dist.lib.dir" value="dist/lib" />
+    <property name="env.LC_TERMINAL" value="iTerm2" />
+    <property name="test.last.failed.file" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/target/test/.lasttestsfailed" />
+    <property name="basedir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy" />
+    <property name="file.separator" value="/" />
+    <property name="java.vm.compressedOopsMode" value="Zero based" />
+    <property name="env.LESS" value="-R" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="doc" value="doc" />
+    <property name="global.server.dir" value="tomcat.conf" />
+    <property name="jars.dir" value="lib" />
+    <property name="server" value="localhost" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="jarfile" value="dist/lib/HTTPProxy.jar" />
+    <property name="env.LC_TERMINAL_VERSION" value="3.3.9" />
+    <property name="env.TERM_PROGRAM_VERSION" value="3.3.9" />
+    <property name="java.runtime.version" value="13.0.2+8" />
+    <property name="env.LSCOLORS" value="Gxfxcxdxbxegedabagacad" />
+    <property name="user.name" value="kevinjones" />
+    <property name="env.PATH" value="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools" />
+    <property name="lib.dir.test" value="lib/test" />
+    <property name="env.XPC_FLAGS" value="0x0" />
+    <property name="env.LOGNAME" value="kevinjones" />
+    <property name="env.__CF_USER_TEXT_ENCODING" value="0x1F5:0x0:0x2" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="env.TERM_SESSION_ID" value="w0t0p0:B80B3B35-161B-4F0C-95DF-499AE2547593" />
+    <property name="ant.file.type.HTTPProxy" value="file" />
+    <property name="local.deploy.lib.dir" value="kevinj/lib" />
+    <property name="env.SHLVL" value="1" />
+    <property name="target.dir" value="target" />
+    <property name="test.reports.dir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/target/reports" />
+    <property name="env.JAVA_MAIN_CLASS_66018" value="org.apache.tools.ant.launch.Launcher" />
+    <property name="deploy.zip.name" value="HttpProxy.zip" />
+    <property name="java.io.tmpdir" value="/var/folders/t0/7g74plhj4398f3t2gbcfdtx80000gn/T/" />
+    <property name="zip.dir" value="zip" />
+    <property name="java.version" value="13.0.2" />
+    <property name="env.SSH_AUTH_SOCK" value="/private/tmp/com.apple.launchd.U8lmT6h592/Listeners" />
+    <property name="deploy.lib.dir" value="c:/home/kevinj/deploy/lib" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.home" value="/usr/local/Cellar/ant/1.10.7_1/libexec" />
+    <property name="lib.dir" value="lib" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.7 compiled on September 1 2019" />
+    <property name="test.data.dir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/test/data" />
+    <property name="java.library.path" value="/Users/kevinjones/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
+    <property name="env.TMPDIR" value="/var/folders/t0/7g74plhj4398f3t2gbcfdtx80000gn/T/" />
+    <property name="java.vendor" value="N/A" />
+    <property name="classes.dir" value="target/classes" />
+    <property name="tomcat.port" value="8080" />
+    <property name="deploy.dir" value="c:/home/kevinj/deploy" />
+    <property name="lib.dir.common" value="lib/common" />
+    <property name="sun.io.unicode.encoding" value="UnicodeBig" />
+    <property name="env.TERM_PROGRAM" value="iTerm.app" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="webapp" value="webapps/addressbook/" />
+    <property name="env.PWD" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy" />
+    <property name="ant.file.type" value="file" />
+    <property name="env.LANG" value="en_GB.UTF-8" />
+    <property name="local.deploy.bin.dir" value="kevinj/bin" />
+    <property name="env.PAGER" value="less" />
+    <property name="java.class.path" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/target/classes:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/target/test:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/test/junit-4.12.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/test/hamcrest-2.2.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/test/mockito-core-3.3.0.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/test/byte-buddy-1.10.5.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/test/byte-buddy-agent-1.10.5.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/test/objenesis-2.6.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/common/log4j-core-2.3.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/common/dm.jar:/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/lib/common/log4j-api-2.3.jar:/usr/local/Cellar/ant/1.10.7_1/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.10.7_1/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.10.7_1/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.10.7_1/libexec/lib/ant-junit4.jar" />
+    <property name="test.src.dir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/src/test/java" />
+    <property name="dist" value="dist" />
+    <property name="env.HOME" value="/Users/kevinjones" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="env.SECURITYSESSIONID" value="186a7" />
+    <property name="java.vm.specification.version" value="13" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="env.LaunchInstanceID" value="4B6F23AA-E245-42A1-BCB7-61FDA7E139EB" />
+    <property name="user.country" value="GB" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="test.dir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/src/test" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="user.home" value="/Users/kevinjones" />
+    <property name="user.language" value="en" />
+    <property name="ant.file.HTTPProxy" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/build.xml" />
+    <property name="env.ZSH" value="/Users/kevinjones/.oh-my-zsh" />
+    <property name="env.COLORTERM" value="truecolor" />
+    <property name="ant.java.version" value="13" />
+    <property name="main.dir" value="src/main/java" />
+    <property name="deploy.bin.dir" value="c:/home/kevinj/deploy/bin" />
+    <property name="env.ITERM_SESSION_ID" value="w0t0p0:B80B3B35-161B-4F0C-95DF-499AE2547593" />
+    <property name="TSTAMP" value="1447" />
+    <property name="env.ITERM_PROFILE" value="Default" />
+    <property name="dist.bin.dir" value="dist/bin" />
+    <property name="jarfile.name" value="HTTPProxy.jar" />
+    <property name="env.XPC_SERVICE_NAME" value="0" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="masterbuild.dir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy" />
+    <property name="ant.file" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy/build.xml" />
+    <property name="path.separator" value=":" />
+    <property name="tomcat.webapp.dir" value="c:/tomcat/webapps/ROOT" />
+    <property name="os.version" value="10.15.3" />
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+    <property name="tomcat.home" value="c:/tomcat" />
+    <property name="ant.project.invoked-targets" value="run-tests" />
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+    <property name="env.SHELL" value="/bin/zsh" />
+    <property name="listen.port" value="9080" />
+    <property name="ant.core.lib" value="/usr/local/Cellar/ant/1.10.7_1/libexec/lib/ant.jar" />
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+    <property name="TODAY" value="February 26 2020" />
+    <property name="user.dir" value="/Users/kevinjones/Dropbox/PS/CourseFolder/gradle-fundamentals/demos/gradle-fundamentals-m1/Ant/HttpProxy" />
+    <property name="os.arch" value="x86_64" />
+    <property name="java.vm.info" value="mixed mode, sharing" />
+    <property name="java.vm.version" value="13.0.2+8" />
+    <property name="local.deploy.dir" value="kevinj" />
+    <property name="env.USER" value="kevinjones" />
+    <property name="java.class.version" value="57.0" />
+    <property name="src.dir" value="src" />
+    <property name="app.tomcat.server.dir" value="tomcat" />
+    <property name="ant.project.default-target" value="help" />
+  </properties>
+  <testcase classname="com.mantiso.kevinj.http.ui.InitDialogTest" name="testInitDialogCancel" time="0.856" />
+  <testcase classname="com.mantiso.kevinj.http.ui.InitDialogTest" name="testInitDialogOK" time="0.026" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
